@@ -1,0 +1,29 @@
+{
+  "name": "zendonote",
+  "version": "1.0.0",
+  "description": "Conscensys blockchain course final project",
+  "main": "truffle.js",
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  },
+  "dependencies": {
+    "truffle": "^4.1.13"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yche276/consensys_finalproject.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yche276/consensys_finalproject/issues"
+  },
+  "homepage": "https://github.com/yche276/consensys_finalproject#readme"
+}
