@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <script src="./app.js"></script>
+      <script>
+
+
+          (function($) {
+              $.fn.buttonLoader = function(action) {
+                  var self = $(this);
+                  //start loading animation
+                  if (action == 'start') {
+                      if ($(self).attr("disabled") == "disabled") {
+                          e.preventDefault();
+                      }
+                      //disable buttons when loading state
+                      $('.has-spinner').attr("disabled", "disabled");
+                      $(self).attr('data-btn-text', $(self).text());
+                      //binding spinner element to button and changing button text
+                      $(self).html('<span class="spinner"><i class="fa fa-spinner fa-spin"></i></span>Adding');
+                      $(self).addClass('active');
+                  }
+                  //stop loading animation
+                  if (action == 'stop') {
+                      $(self).html($(self).attr('data-btn-text'));
+                      $(self).removeClass('active');
+                      //enable buttons after finish loading
+                      $('.has-spinner').removeAttr("disabled");
+                  }
+              }
+          })(jQuery);
+
+      </script>
+      <style>
+          .buttonload {
+              background-color: #4CAF50; /* Green background */
+              border: none; /* Remove borders */
+              color: white; /* White text */
+              padding: 12px 24px; /* Some padding */
+              font-size: 16px; /* Set a font-size */
+          }
+
+          /* Add a right margin to each icon */
+          .fa {
+              margin-left: -12px;
+              margin-right: 8px;
+          }
+      </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Todo list</title>
+  </head>
+  <body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">ETH Address:</a>
+        <a class="navbar-brand" href="/" id="eth-address">0x....</a>
+
+      </div>
+    </div>
+  </nav>
+    <div class="container">
+
+      <div class="content-area row">
+        <div class="col-md-2 col-xs-2 col-lg-2 col-sm-2"></div>
+
+        <div class="col-md-8 col-xs-8 col-lg-8 col-sm-8">
+          <h2 >ToDo List</h2>
+
+          <div class="row input-area">
+            <div class="col-md-1"></div>
+            <div class="form-group col-md-9">
+              <input type="text" placeholder="New Task" class="form-control" id="addTask">
+            </div>
+            <div class="form-group col-md-1">
+             <button class="btn btn-primary has-spinner" id="add-button">Add</button>
+            </div>
+            <div class="col-md-1"></div>
+          </div>
+
+          <ul class="list-group" id="taskList">
+
+          </ul>
+        </div>
+
+        <div class="col-md-2 col-xs-2 col-lg-2 col-sm-2"></div>
+      </div>
+
+    </div><!-- /.container -->
+
+
+  </body>
+</html>
