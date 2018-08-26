@@ -57,7 +57,7 @@ contract TodoList is Pausable{
      * @return count return the length of ipfsHashes array
      */
     function getTaskByIndex(uint index) public view whenNotPaused returns (bytes ipfsHash){
-        require(index > 0);
+        require(index >= 0);
         require(index < ipfsHashes.length);
         return ipfsHashes[index];
     }
@@ -67,7 +67,7 @@ contract TodoList is Pausable{
      * @return count  the count of ipfsHashes array
      */
     function getUserAddressByIndex(uint index) public view whenNotPaused returns(address userAddress) {
-        require(index > 0);
+        require(index >= 0);
         require(index < userAddresses.length);
         return(userAddresses[index]);
     }
@@ -76,13 +76,14 @@ contract TodoList is Pausable{
      * @param index the index of task
      * @return result true if the the task is deleted
      */
-    function deleteTaskByIndex(uint index) public onlyOwner whenNotPaused returns(bool result) {
-        require(index > 0);
+    function deleteTaskByIndex(uint index) public whenNotPaused returns(bool result) {
+        require(index >= 0);
         require(index < ipfsHashes.length);
 
         for (uint i = index; i<ipfsHashes.length-1; i++){
             ipfsHashes[i] = ipfsHashes[i+1];
         }
+        delete ipfsHashes[ipfsHashes.length-1];
         ipfsHashes.length--;
 
         return(true);
