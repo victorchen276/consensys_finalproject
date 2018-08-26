@@ -208,7 +208,7 @@ window.App = {
         TodoContract.deployed().then(function(instance) {
             var todoListInstance = instance;
 
-            return todoListInstance.deleteTodoItemByIndex(taskIndex, {gas: 200000, from: web3.eth.accounts[0]})
+            return todoListInstance.deleteTaskByIndex(taskIndex, {gas: 200000, from: web3.eth.accounts[0]})
         }).then(function(result) {
             console.log('result = ', result);
             tasks.splice(taskIndex, 1);

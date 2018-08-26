@@ -4,6 +4,7 @@ import "truffle/Assert.sol";
 import "truffle/DeployedAddresses.sol";
 import "../contracts/TodoList.sol";
 
+
 contract TestTodoList {
     TodoList todo = TodoList(DeployedAddresses.TodoList());
 
@@ -45,7 +46,7 @@ contract TestTodoList {
     }
 
     function testDeleteTask() public {
-        bool result = todo.deleteTodoItemByIndex(0);
+        bool result = todo.deleteTaskByIndex(0);
         uint count = todo.getTasksCount();
         uint expected = 0;
         Assert.equal(count, expected, "expect 0 task");
