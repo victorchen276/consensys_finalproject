@@ -8,7 +8,7 @@ How to run:<br/>
 2: in the source code directory， run following commands<br/>
 	(1)npm install<br/>
 	(2)truflle compile<br/>
-	(3)truffle migrate(please make suer Ganache is running and is using port 8545 as required)<br/>
+	(3)truffle migrate(please make sure Ganache is running and is using port 8545 as required)<br/>
 	(4)npm run dev<br/>
 	the server should listen port 8080. If 8080 is not avaliable, it should use the next avaliable port which is 8081.<br/>
 3: improt a private key from Ganache into the Matemask and choose this account as current account in Matemask<br/>
