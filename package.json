@@ -37,6 +37,7 @@
   "dependencies": {
     "boostrap": "^2.0.0",
     "bootstrap": "^4.0.0",
+    "idb-readable-stream": "0.0.4",
     "ipfs": "^0.31.7",
     "ipfs-api": "^19.0.0",
     "jquery": "^3.3.1",
